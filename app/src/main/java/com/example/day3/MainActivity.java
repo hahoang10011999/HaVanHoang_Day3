@@ -70,17 +70,16 @@ public class MainActivity extends AppCompatActivity {
         String edName = intent.getStringExtra("edName");
         String edNumber = intent.getStringExtra("edNumber");
         int i = intent.getIntExtra("newposition",999);
-        int i1 = intent.getIntExtra("position",999);
-        if(name != null && number != null ){
+        int j = intent.getIntExtra("position",999);
+
             Contact user = new Contact(name,number);
             contacts.add(user);
-        }
-        if(name1 != null) {
+            if(name1 != null) {
             contacts.get(i).setName(name1);
         }
-        if(edName != null && edNumber != null){
-            contacts.get(i1).setName(edName);
-            contacts.get(i1).setNumber(edNumber);
+         if(edName != null && edNumber != null){
+            contacts.get(j).setName(edName);
+            contacts.get(j).setNumber(edNumber);
         }
 
     recyclerView.setLayoutManager(layoutManager);
